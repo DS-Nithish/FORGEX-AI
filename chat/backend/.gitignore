@@ -1,0 +1,14 @@
+node_modules
+dist
+*.db
+*.db-journal
+logs/*.log
+.env
+
+# Sensitive OAuth credentials & tokens
+credentials.json
+token.json
+secrets/
+**/secrets/
+**/credentials.json
+**/token.json

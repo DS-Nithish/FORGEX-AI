@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "tavily-search": {
+      "command": "npx",
+      "args": ["-y", "tsx", "chat/backend/src/mcp/tavilyMcpServer.ts"],
+      "env": {
+        "TAVILY_API_KEY": "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"
+      }
+    },
+    "tavily-official": {
+      "command": "npx",
+      "args": ["-y", "tavily-mcp"],
+      "env": {
+        "TAVILY_API_KEY": "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"
+      }
+    }
+  }
+}
