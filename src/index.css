@@ -1,0 +1,207 @@
+@import "tailwindcss";
+
+@theme {
+  --color-surface: #f8f9ff;
+  --color-surface-dim: #cbdbf5;
+  --color-surface-bright: #f8f9ff;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #eff4ff;
+  --color-surface-container: #e5eeff;
+  --color-surface-container-high: #dce9ff;
+  --color-surface-container-highest: #d3e4fe;
+  --color-surface-variant: #d3e4fe;
+  --color-surface-tint: #00639a;
+
+  --color-on-surface: #0b1c30;
+  --color-on-surface-variant: #3f4851;
+  --color-inverse-surface: #213145;
+  --color-inverse-on-surface: #eaf1ff;
+
+  --color-outline: #707882;
+  --color-outline-variant: #bfc7d2;
+
+  --color-primary: #006096;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #007abc;
+  --color-on-primary-container: #fdfcff;
+  --color-primary-fixed: #cee5ff;
+  --color-primary-fixed-dim: #96ccff;
+  --color-on-primary-fixed: #001d32;
+  --color-on-primary-fixed-variant: #004a75;
+  --color-inverse-primary: #96ccff;
+
+  --color-secondary: #565e74;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #dae2fd;
+  --color-on-secondary-container: #5c647a;
+  --color-secondary-fixed: #dae2fd;
+  --color-secondary-fixed-dim: #bec6e0;
+  --color-on-secondary-fixed: #131b2e;
+  --color-on-secondary-fixed-variant: #3f465c;
+
+  --color-tertiary: #006385;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #007ea7;
+  --color-on-tertiary-container: #fbfcff;
+  --color-tertiary-fixed: #c2e8ff;
+  --color-tertiary-fixed-dim: #75d1ff;
+  --color-on-tertiary-fixed: #001e2b;
+  --color-on-tertiary-fixed-variant: #004d67;
+
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
+
+  --color-background: #f8f9ff;
+  --color-on-background: #0b1c30;
+
+  --font-display-xl: 'Plus Jakarta Sans', sans-serif;
+  --font-headline-lg: 'Plus Jakarta Sans', sans-serif;
+  --font-headline-md: 'Plus Jakarta Sans', sans-serif;
+  --font-headline-sm: 'Plus Jakarta Sans', sans-serif;
+  --font-title-md: 'Plus Jakarta Sans', sans-serif;
+  --font-body-lg: 'Inter', sans-serif;
+  --font-body-md: 'Inter', sans-serif;
+  --font-body-sm: 'Inter', sans-serif;
+  --font-code-sm: 'JetBrains Mono', monospace;
+  --font-label-md: 'Plus Jakarta Sans', sans-serif;
+  --font-label-sm: 'Plus Jakarta Sans', sans-serif;
+  --font-metric-val: 'Plus Jakarta Sans', sans-serif;
+}
+
+@layer base {
+  body {
+    font-family: 'Inter', sans-serif;
+    color: #0b1c30;
+    background-color: #f8f9ff;
+    overflow-x: hidden;
+  }
+}
+
+.landing-grid { background-image: linear-gradient(rgba(124, 210, 255, .08) 1px, transparent 1px), linear-gradient(90deg, rgba(124, 210, 255, .08) 1px, transparent 1px); background-size: 44px 44px; mask-image: linear-gradient(to bottom, black, transparent 86%); }
+.landing-orb { position: absolute; border-radius: 9999px; filter: blur(80px); opacity: .55; animation: drift 12s ease-in-out infinite alternate; }
+.landing-orb-one { width: 34rem; height: 34rem; top: -11rem; right: -7rem; background: #008cbd; }
+.landing-orb-two { width: 25rem; height: 25rem; bottom: -9rem; left: -8rem; background: #4f46e5; animation-delay: -5s; }
+.animate-rise { animation: rise .7s both cubic-bezier(.2,.8,.2,1); }
+.animation-delay-100 { animation-delay: .1s; }.animation-delay-200 { animation-delay: .2s; }.animation-delay-300 { animation-delay: .3s; }.animation-delay-400 { animation-delay: .4s; }
+.animate-float { animation: float 5s ease-in-out infinite; }
+@keyframes rise { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes drift { from { transform: translate3d(0, 0, 0) scale(1); } to { transform: translate3d(-35px, 25px, 0) scale(1.1); } }
+@media (prefers-reduced-motion: reduce) { .landing-orb, .animate-rise, .animate-float { animation: none; } }
+
+.font-display-xl {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 48px;
+  line-height: 56px;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+
+.font-headline-lg {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.font-headline-md {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
+.font-headline-sm {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.font-title-md {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+}
+
+.font-body-lg {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+}
+
+.font-body-md {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+.font-body-sm {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.font-code-sm {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 500;
+}
+
+.font-label-md {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.font-label-sm {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 11px;
+  line-height: 14px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.font-metric-val {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 28px;
+  line-height: 32px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.px-gutter {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .px-gutter {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+.gap-space-xs { gap: 0.25rem; }
+.gap-space-sm { gap: 0.5rem; }
+.gap-space-md { gap: 1rem; }
+.gap-space-lg { gap: 1.5rem; }
+.gap-space-xl { gap: 2.5rem; }
+
+.p-space-lg { padding: 1.5rem; }
+.p-space-xl { padding: 2.5rem; }
+.py-space-xl { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+.ml-space-sm { margin-left: 0.5rem; }

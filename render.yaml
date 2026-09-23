@@ -1,0 +1,37 @@
+services:
+  - type: web
+    name: cognifix
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_ANON_KEY
+        sync: false
+      - key: SUPABASE_SECRET_KEY
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GROQ_DIAGNOSER_API_KEY
+        sync: false
+      - key: GROQ_GENERATOR_API_KEY
+        sync: false
+      - key: GROQ_EXPLAINER_API_KEY
+        sync: false
+      - key: GROQ_ROADMAP_API_KEY
+        sync: false
+      - key: GROQ_DOCUMENT_API_KEY
+        sync: false
+      - key: GROQ_DOCUMENT_MODEL
+        sync: false
+      - key: GROQ_MODEL
+        sync: false
